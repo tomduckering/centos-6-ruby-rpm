@@ -1,0 +1,8 @@
+#!/bin/sh -ex
+vagrant up
+vagrant ssh-config > tempsshconfig
+conf="-F tempsshconfig"
+scp ${conf} build-ruby-rpm.sh default:/tmp
+ssh ${conf} default "cd /tmp && sh build-ruby-rpm.sh"
+scp ${conf} default:/home/vagrant/rpmbuild/RPMS/x86_64/ruby-1.9.3p448*.rpm .
+sh ./clean
