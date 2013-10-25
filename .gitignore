@@ -1,3 +1,4 @@
 tempsshconfig
 *.rpm
 .vagrant
+rpmdiff.sh
