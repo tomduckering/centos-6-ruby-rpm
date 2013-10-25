@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-sudo yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make
+sudo yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make redhat-rpm-config
 
 
 # wget http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
@@ -28,6 +28,6 @@ KERNEL_REL=`uname -r`
 KERNEL_TMP=${KERNEL_REL%.$ARCH}
 DISTRIB=${KERNEL_TMP##*.}
 
-
+sudo yum remove -y ruby-* puppet facter
 
 sudo yum localinstall -y ~/rpmbuild/RPMS/${ARCH}/ruby-1.9.3p448-1.${DISTRIB}.${ARCH}.rpm
