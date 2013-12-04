@@ -3,3 +3,5 @@
 vagrant destroy -f
 rm -Rf ./.vagrant
 rm -f tempsshconfig
+
+#asdfasdf
